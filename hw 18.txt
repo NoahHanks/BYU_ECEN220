@@ -1,0 +1,42 @@
+a)
+module ALU (
+input wire logic[7:0] A, B,
+input wire logic[1:0] ctrl,
+output wire logic[7:0] Q
+);
+
+always_comb begin
+	if(ctrl == 2'b00) begin
+		A = A;
+	end
+	else if(ctrl == 2'b01) begin
+		Q = A + B;
+	end
+	else if(ctrl == 2'b10) begin
+		Q = A - B;
+	end
+	else if(ctrl == 2'b11) begin
+		A = ~A;
+	end
+end
+
+b)
+module maximum (
+input wire logic [9:0] A, B, C,
+output wiore logic [9:0] max
+);
+
+always_comb begin
+	if((A >= B) & (A >= C)) begin
+		max = A;
+	end
+	else if((B >= A) & (B >= C)) begin
+		max = B;
+	end
+	else if((C >= A) & (C >= B)) begin
+		max = C;
+	end
+	else begin
+		max = 'X;
+	end
+end
