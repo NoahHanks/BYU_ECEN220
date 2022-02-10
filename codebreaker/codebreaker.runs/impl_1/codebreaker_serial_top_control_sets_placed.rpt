@@ -1,0 +1,87 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Wed Nov 18 16:56:29 2020
+| Host         : ROFLpwn01 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file codebreaker_serial_top_control_sets_placed.rpt
+| Design       : codebreaker_serial_top
+| Device       : xc7a35ti
+---------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |     9 |
+|    Minimum number of control sets                        |     9 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    36 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |     9 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     6 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     2 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               4 |            1 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              27 |            9 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              53 |           17 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------+---------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
+|         Clock Signal        |             Enable Signal             |                 Set/Reset Signal                | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------+---------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
+|  clk_generator_inst/clk_100 |                                       |                                                 |                1 |              4 |         4.00 |
+|  clk_generator_inst/clk_100 | CharDrawer_inst/TX/E[0]               | CharDrawer_inst/cnt[3]_i_1_n_0                  |                1 |              4 |         4.00 |
+|  clk_generator_inst/clk_100 | stopwatch_inst/MC1/count0             | stopwatch_inst/MC1/count[3]_i_1_n_0             |                2 |              4 |         2.00 |
+|  clk_generator_inst/clk_100 | stopwatch_inst/MC2/count0             | stopwatch_inst/MC2/count[3]_i_1__0_n_0          |                2 |              4 |         2.00 |
+|  clk_generator_inst/clk_100 | stopwatch_inst/MC3/count0             | stopwatch_inst/MC2/SR[0]                        |                1 |              4 |         4.00 |
+|  clk_generator_inst/clk_100 | stopwatch_inst/MC4/count0             | stopwatch_inst/MC3/SR[0]                        |                2 |              4 |         2.00 |
+|  clk_generator_inst/clk_100 | CharDrawer_inst/TX/BaudCoutner/count0 | CharDrawer_inst/TX/BaudCoutner/count[0]_i_1_n_0 |                4 |             13 |         3.25 |
+|  clk_generator_inst/clk_100 | stopwatch_inst/MC0/count0             | stopwatch_inst/MC0/count[0]_i_1__0_n_0          |                5 |             20 |         4.00 |
+|  clk_generator_inst/clk_100 |                                       | btnu_IBUF                                       |                9 |             27 |         3.00 |
++-----------------------------+---------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
+
+
